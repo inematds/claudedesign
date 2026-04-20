@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Módulo 3.6 · Edge cases | T3</title>
+<script src="https://cdn.tailwindcss.com"></script><script>tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#FACC15', dark: { 900:'#111827',800:'#1f2937',700:'#374151',600:'#4b5563' } } } } }</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>body { font-family: 'Inter', sans-serif; } .dark body { background-color: #111827; } html:not(.dark) body { background-color: #f8fafc; } html:not(.dark) .bg-dark-900 { background-color: #ffffff; } html:not(.dark) .bg-dark-800 { background-color: #f9fafb; } html:not(.dark) .bg-dark-700 { background-color: #f3f4f6; } html:not(.dark) .bg-dark-600 { background-color: #e5e7eb; } html:not(.dark) .text-neutral-100 { color: #111827; } html:not(.dark) .text-neutral-300 { color: #4b5563; } html:not(.dark) .text-neutral-400 { color: #6b7280; } html:not(.dark) .text-neutral-500 { color: #9ca3af; } html:not(.dark) .border-dark-600 { border-color: #d1d5db; } html:not(.dark) .border-dark-700 { border-color: #e5e7eb; } html:not(.dark) .text-purple-400 { color: #7c3aed; } html:not(.dark) .bg-purple-500\/20 { background-color: rgba(124,58,237,0.12); } html:not(.dark) .bg-purple-500\/10 { background-color: rgba(124,58,237,0.08); } html:not(.dark) .bg-purple-900\/20, html:not(.dark) .bg-purple-900\/30, html:not(.dark) .bg-purple-900\/40 { background-color: rgba(124,58,237,0.08); } html:not(.dark) .border-purple-500\/30 { border-color: rgba(124,58,237,0.25); } html:not(.dark) .text-red-400 { color: #b91c1c; } html:not(.dark) .bg-red-900\/20 { background-color: rgba(185,28,28,0.06); } html:not(.dark) .border-red-500\/30 { border-color: rgba(185,28,28,0.25); } html:not(.dark) .text-emerald-400 { color: #059669; } html:not(.dark) .bg-emerald-900\/20 { background-color: rgba(5,150,105,0.08); } html:not(.dark) .border-emerald-500\/30 { border-color: rgba(5,150,105,0.25); } html:not(.dark) [class*="bg-gradient-to"] { background-image: none !important; } html:not(.dark) .text-primary { color: #a16207; } html:not(.dark) .bg-primary\/10 { background-color: rgba(161,98,7,0.08); } html:not(.dark) .border-primary\/30, html:not(.dark) .border-primary\/40 { border-color: rgba(161,98,7,0.25); } html:not(.dark) .text-sky-400 { color: #0369a1; } html:not(.dark) .text-yellow-400 { color: #a16207; } html:not(.dark) .hover\:text-sky-300:hover { color: #0284c7; } html:not(.dark) .hover\:text-yellow-300:hover { color: #854d0e; } html:not(.dark) .bg-dark-900\/95 { background-color: rgba(255,255,255,0.95); }</style></head>
+<body class="bg-dark-900 text-neutral-100 min-h-screen">
+<nav class="sticky top-0 z-50 bg-dark-900/95 backdrop-blur-sm border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex justify-between items-center h-14"><div class="flex items-center space-x-4"><a href="../../index.html" class="flex items-center space-x-2 text-yellow-400 hover:text-yellow-300"><span class="text-2xl">✨</span><span class="font-bold text-lg hidden sm:inline">Claude Design Course</span></a><span class="text-neutral-600">|</span><a href="https://inema.club" target="_blank" class="text-sky-400 hover:text-sky-300 text-sm font-medium">INEMA.CLUB</a></div><div class="flex items-center space-x-1 sm:space-x-2"><a href="../trilha1/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-emerald-400 hover:bg-emerald-500/10 transition-colors"><span class="sm:hidden">T1</span><span class="hidden sm:inline">Fundamentos</span></a><a href="../trilha2/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-blue-400 hover:bg-blue-500/10 transition-colors"><span class="sm:hidden">T2</span><span class="hidden sm:inline">Intermediário</span></a><a href="index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-purple-400 bg-purple-500/10"><span class="sm:hidden">T3</span><span class="hidden sm:inline">Avançado</span></a><a href="../trilha4/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-amber-400 hover:bg-amber-500/10 transition-colors"><span class="sm:hidden">T4</span><span class="hidden sm:inline">Galeria</span></a><a href="../trilha5/index.html" class="px-3 py-1.5 rounded-lg text-sm font-semibold text-neutral-400 hover:text-teal-400 hover:bg-teal-500/10 transition-colors"><span class="sm:hidden">T5</span><span class="hidden sm:inline">Prompts</span></a><button id="theme-toggle" class="p-2 rounded-lg bg-dark-700 hover:bg-dark-600 transition-colors ml-2"><svg id="theme-toggle-dark-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"/></svg><svg id="theme-toggle-light-icon" class="hidden w-5 h-5 text-neutral-300" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"/></svg></button></div></div></div></nav>
+
+<nav class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4"><div class="flex items-center space-x-2 text-sm text-neutral-400"><a href="../../index.html" class="hover:text-purple-400">Início</a><span>/</span><a href="index.html" class="hover:text-purple-400">Trilha 3</a><span>/</span><span class="text-purple-400">Módulo 3.6</span></div></nav>
+
+<header class="bg-gradient-to-br from-purple-900/30 via-dark-800 to-dark-800 py-12 border-b border-dark-600"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <span class="inline-block px-3 py-1 bg-purple-500/20 text-purple-400 text-xs font-semibold rounded-full mb-4">MÓDULO 3.6</span>
+  <h1 class="text-3xl sm:text-4xl font-bold mb-4">🎯 Edge cases & limitações</h1>
+  <p class="text-lg text-neutral-400 max-w-3xl">As pegadinhas que só aparecem quando você já domina o básico. Newspaper default, 1920×1080 fixo, scrollIntoView proibido, styles naming, etc.</p>
+  <div class="grid grid-cols-4 gap-4 mt-8 max-w-2xl">
+    <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">6</div><div class="text-xs text-neutral-400">Tópicos</div></div>
+    <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">35</div><div class="text-xs text-neutral-400">Minutos</div></div>
+    <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Expert</div><div class="text-xs text-neutral-400">Nível</div></div>
+    <div class="bg-dark-800/50 rounded-lg p-3 border border-dark-600"><div class="text-xl font-bold text-purple-400">Caveat</div><div class="text-xs text-neutral-400">Tipo</div></div>
+  </div>
+</div></header>
+
+<main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-10">
+  <h3 class="text-lg font-semibold text-neutral-200 mb-4 flex items-center"><span class="mr-2">🗺️</span> Mapa das 6 pegadinhas</h3>
+  <svg viewBox="0 0 760 280" class="w-full" xmlns="http://www.w3.org/2000/svg">
+    <rect x="20" y="20" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="40" y="42" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">1. Newspaper default</text><text x="40" y="62" font-family="Inter" font-size="10" fill="#fecaca">se você sub-especifica</text><text x="40" y="80" font-family="Inter" font-size="10" fill="#fecaca">fix: DS + restrições</text>
+    <rect x="265" y="20" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="285" y="42" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">2. Decks 1920×1080 fixo</text><text x="285" y="62" font-family="Inter" font-size="10" fill="#fecaca">9:16 precisa explícito</text><text x="285" y="80" font-family="Inter" font-size="10" fill="#fecaca">fix: diga o aspect ratio</text>
+    <rect x="510" y="20" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="530" y="42" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">3. Sem title screen</text><text x="530" y="62" font-family="Inter" font-size="10" fill="#fecaca">em protótipos (intencional)</text><text x="530" y="80" font-family="Inter" font-size="10" fill="#fecaca">fix: peça explícito</text>
+    <rect x="20" y="110" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="40" y="132" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">4. Cross-project RO</text><text x="40" y="152" font-family="Inter" font-size="10" fill="#fecaca">asset externo quebra</text><text x="40" y="170" font-family="Inter" font-size="10" fill="#fecaca">fix: copy_files</text>
+    <rect x="265" y="110" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="285" y="132" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">5. scrollIntoView proibido</text><text x="285" y="152" font-family="Inter" font-size="10" fill="#fecaca">quebra web app</text><text x="285" y="170" font-family="Inter" font-size="10" fill="#fecaca">fix: window.scrollTo</text>
+    <rect x="510" y="110" width="230" height="80" rx="10" fill="#7f1d1d" stroke="#f87171"/><text x="530" y="132" font-family="Inter" font-size="12" font-weight="700" fill="#fca5a5">6. styles naming collision</text><text x="530" y="152" font-family="Inter" font-size="10" fill="#fecaca">Babel inline crasha</text><text x="530" y="170" font-family="Inter" font-size="10" fill="#fecaca">fix: nome único</text>
+    <rect x="20" y="200" width="720" height="60" rx="10" fill="#064e3b" stroke="#10b981"/>
+    <text x="380" y="222" text-anchor="middle" font-family="Inter" font-size="12" font-weight="700" fill="#6ee7b7">Saber as 6 pegadinhas evita 90% das frustrações "avançadas"</text>
+    <text x="380" y="244" text-anchor="middle" font-family="Inter" font-size="10" fill="#a7f3d0">A maioria está documentada no system prompt leak</text>
+  </svg>
+</div>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">1</span><h2 class="text-2xl font-bold">📰 Newspaper default sub-especificado</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Sintomas: italic serif, off-white, pull-quote editorial, layout "Our Portfolio". Fix: DESIGN.md + referências explícitas + restrições ("sem italic serif, sem off-white").</p>
+</section>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">2</span><h2 class="text-2xl font-bold">📐 Decks são 1920×1080 fixo</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">deck_stage.js hardcoded 16:9. Para 9:16 (stories, Instagram Reels), 4:3 (legacy), 1:1 (square), <strong>peça explicitamente</strong> ANTES de pedir slides. Senão retrabalho.</p>
+<div class="bg-dark-800 rounded-xl border border-dark-600 p-6 mb-6"><pre class="bg-dark-900 p-3 rounded text-xs text-neutral-300 overflow-auto border border-dark-600"><code>"Crie slides 9:16 (vertical, 1080×1920) para stories.
+ NÃO use deck_stage.js default — faça manual com scale
+ próprio. Stage de viewport height."</code></pre></div>
+</section>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">3</span><h2 class="text-2xl font-bold">🚫 Sem tela de "título" em protótipos</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Regra intencional do system prompt: <em>"Resist the urge to add a title screen."</em> Se quer uma tela inicial de "splash/título", peça explicitamente.</p>
+</section>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">4</span><h2 class="text-2xl font-bold">🔒 Cross-project read-only</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Claude pode LER arquivos de outros projetos, mas assets (imagens, CSS) não carregam via path externo. Peça <code class="text-purple-400 text-sm">copy_files</code> para copiar para o projeto atual antes de referenciar.</p>
+</section>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">5</span><h2 class="text-2xl font-bold">⛔ scrollIntoView proibido</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">System prompt: <em>"Never use scrollIntoView — it can mess up the web app."</em> Quebra o iframe do Claude Design. Use <code class="text-purple-400 text-sm">window.scrollTo()</code> ou <code class="text-purple-400 text-sm">element.offsetTop + manual scroll</code>.</p>
+</section>
+
+<section class="mb-16"><div class="flex items-center space-x-4 mb-6"><span class="flex items-center justify-center w-12 h-12 rounded-full bg-purple-500/20 text-purple-400 font-bold text-xl">6</span><h2 class="text-2xl font-bold">🏷️ Style objects com nome único (NON-NEGOCIÁVEL)</h2></div>
+<p class="text-neutral-300 mb-6 leading-relaxed">Babel scripts inline compartilham escopo global. Se dois componentes têm <code class="text-red-400 text-sm">const styles = {}</code>, o segundo sobrescreve o primeiro — crash silencioso.</p>
+<div class="bg-red-900/20 rounded-xl border border-red-500/30 p-6 mb-6"><pre class="bg-dark-900 p-3 rounded text-xs text-neutral-300 overflow-auto border border-dark-600"><code>// ✗ ERRADO — crasha
+const styles = { button: {...} };  // em button.jsx
+const styles = { card: {...} };    // em card.jsx → SOBREWRITE
+
+// ✓ CERTO
+const buttonStyles = { ... };
+const cardStyles = { ... };
+// Ou use inline styles</code></pre></div>
+</section>
+
+<section class="mb-12"><div class="bg-gradient-to-br from-purple-900/40 via-dark-800 to-dark-800 rounded-xl border border-purple-500/30 p-8">
+  <h2 class="text-2xl font-bold mb-6 flex items-center"><span class="mr-3">✅</span> Resumo do Módulo</h2>
+  <div class="space-y-4 mb-8">
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Newspaper default</strong><span class="text-neutral-400"> — fix via DS + restrições explícitas.</span></div></div>
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">1920×1080 é default fixo</strong><span class="text-neutral-400"> — override para outros ratios.</span></div></div>
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Sem title screen default</strong><span class="text-neutral-400"> — peça se quiser.</span></div></div>
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Cross-project read-only</strong><span class="text-neutral-400"> — copy_files explícito.</span></div></div>
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">scrollIntoView é bug</strong><span class="text-neutral-400"> — use window.scrollTo.</span></div></div>
+    <div class="flex items-start space-x-3"><span class="text-purple-400 mt-1">✓</span><div><strong class="text-white">Nome único em styles</strong><span class="text-neutral-400"> — colisão Babel crasha silenciosamente.</span></div></div>
+  </div>
+  <div class="bg-dark-800/50 rounded-lg p-4 mb-8"><h3 class="font-semibold text-purple-400 mb-2">Próximo Módulo:</h3><p class="text-neutral-300">3.7 — 🧙 Manipulação avançada do system prompt</p></div>
+  <div class="flex flex-col sm:flex-row gap-4"><a href="modulo-3-5.html" class="flex-1 text-center px-6 py-3 bg-dark-700 text-neutral-300 rounded-lg font-semibold hover:bg-dark-600 transition-colors">← Módulo 3.5</a><a href="modulo-3-7.html" class="flex-1 text-center px-6 py-3 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-500 transition-colors">Módulo 3.7 →</a></div>
+</div></section>
+</main>
+
+<footer class="border-t border-dark-600 py-8 mt-16"><div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-neutral-500 text-sm"><p>Claude Design Course · INEMA.CLUB · 2026</p></div></footer>
+<script>const themeToggle=document.getElementById('theme-toggle'),d=document.getElementById('theme-toggle-dark-icon'),l=document.getElementById('theme-toggle-light-icon'),h=document.documentElement;if(localStorage.getItem('theme')==='light'||(!localStorage.getItem('theme')&&!h.classList.contains('dark'))){d.classList.remove('hidden');h.classList.remove('dark');}else{l.classList.remove('hidden');}themeToggle.addEventListener('click',()=>{d.classList.toggle('hidden');l.classList.toggle('hidden');h.classList.toggle('dark');localStorage.setItem('theme',h.classList.contains('dark')?'dark':'light');});</script>
+</body></html>

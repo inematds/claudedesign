@@ -29,7 +29,7 @@ Cada trilha tem:
 - [x] Estrutura inicial publicada
 - [x] **Trilha 1 — Fundamentos** (7/7 módulos, ~4.300 linhas, 12 SVGs)
 - [x] **Trilha 2 — Intermediário** (7/7 módulos, ~3.800 linhas, 12 SVGs)
-- [ ] Trilha 3 — Avançado & Expert
+- [x] **Trilha 3 — Avançado & Expert** (7/7 módulos, ~3.500 linhas, 10 SVGs)
 - [ ] Trilha 4 — Galeria claude.ai/design
 - [ ] Trilha 5 — Prompts & Automações
 
