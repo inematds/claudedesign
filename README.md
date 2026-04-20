@@ -31,7 +31,11 @@ Cada trilha tem:
 - [x] **Trilha 2 — Intermediário** (7/7 módulos, ~3.800 linhas, 12 SVGs)
 - [x] **Trilha 3 — Avançado & Expert** (7/7 módulos, ~3.500 linhas, 10 SVGs)
 - [x] **Trilha 4 — Galeria claude.ai/design** (7/7 módulos, galeria de 30+ exemplos + 3 cases)
-- [ ] Trilha 5 — Prompts & Automações
+- [x] **Trilha 5 — Prompts & Automações** (7/7 módulos, 3 templates prontos + skill + pipeline MCP)
+
+## 🎉 Curso completo
+
+**35 módulos** (5 trilhas × 7), **~200 tópicos expansíveis**, **40+ ilustrações SVG custom**, **3 prompts-template copy-paste**, cobertura completa do Claude Design de zero a expert + automações.
 
 ## Padrão visual
 
